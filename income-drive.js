@@ -1,6 +1,7 @@
 /* Retro Gift Finder — RRUK Income Drive v1 */
 (() => {
   const RRUK = 'https://retroreplay.uk';
+  const HUNT = RRUK + '/pages/find-my-console#1789076813a6932e54';
   const CHECKER = 'https://taccountant2026.github.io/Retro-Console-Checker/';
   const source = 'retro_gift_finder';
   const campaign = 'income_drive';
@@ -12,12 +13,13 @@
     return u.toString();
   };
   const huntUrl = (model='retro console') => {
-    const u = new URL(RRUK + '/pages/contact');
+    const u = new URL(HUNT);
     u.searchParams.set('utm_source', source);
     u.searchParams.set('utm_medium', 'lead');
     u.searchParams.set('utm_campaign', campaign);
-    u.searchParams.set('contact_posted', 'false');
-    u.hash = 'ContactForm';
+    u.searchParams.set('utm_content', 'find_one');
+    if (model) u.searchParams.set('console', model);
+    u.hash = '1789076813a6932e54';
     return u.toString();
   };
   const checkerUrl = model => {
@@ -67,6 +69,8 @@
       shop.href = tracked(shop.href, 'recommendation');
       hunt.href = huntUrl(model);
       check.href = checkerUrl(model);
+      const personalHelp = help.querySelector('a');
+      if (personalHelp) personalHelp.href = huntUrl(model);
     }, 0);
   });
 
