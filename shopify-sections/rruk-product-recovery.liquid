@@ -1,0 +1,27 @@
+{% comment %}RRUK product-page recovery. Add beneath product information.{% endcomment %}
+<section class="rruk-recovery" aria-labelledby="rruk-recovery-title-{{ section.id }}">
+  <h2 id="rruk-recovery-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+  {% unless product.available %}
+    <p class="rruk-recovery__sold">This exact item is currently unavailable. Choose a useful next step below.</p>
+  {% else %}
+    <p>{{ section.settings.copy | escape }}</p>
+  {% endunless %}
+  <div class="rruk-recovery__actions">
+    <a class="rruk-recovery__primary" href="{{ section.settings.hunt_url }}?utm_source=rruk_product&amp;utm_campaign=console_hunt{% if product %}&amp;product={{ product.title | url_encode }}{% endif %}">{% if product.available %}ASK RRUK TO FIND SOMETHING DIFFERENT{% else %}FIND ANOTHER FOR ME{% endif %}</a>
+    <a href="{{ section.settings.checker_url }}?utm_source=rruk_product&amp;utm_campaign=console_checker{% if product %}&amp;console={{ product.title | url_encode }}{% endif %}">CHECK THIS MODEL</a>
+    {% if collection %}<a href="{{ collection.url }}">BROWSE SIMILAR CONSOLES</a>{% else %}<a href="{{ routes.all_products_collection_url }}">BROWSE CURRENT STOCK</a>{% endif %}
+  </div>
+</section>
+<style>
+#shopify-section-{{ section.id }} .rruk-recovery{margin:28px 0;padding:22px;background:#061b49;color:#fff;border:2px solid #16d5ff}
+#shopify-section-{{ section.id }} .rruk-recovery h2{color:#ffd326;font:900 clamp(20px,4vw,28px) "Courier New",monospace;text-transform:uppercase;margin:0 0 10px}
+#shopify-section-{{ section.id }} .rruk-recovery__sold{border-left:4px solid #ff493e;padding-left:12px}
+#shopify-section-{{ section.id }} .rruk-recovery__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+#shopify-section-{{ section.id }} .rruk-recovery__actions a{display:inline-block;background:#0b56a0;color:#fff;border-bottom:4px solid #042d59;padding:12px 15px;text-decoration:none;font:900 13px "Courier New",monospace}
+#shopify-section-{{ section.id }} .rruk-recovery__actions .rruk-recovery__primary{background:#ffd326;color:#051334;border-bottom-color:#dc8f00}
+#shopify-section-{{ section.id }} .rruk-recovery__actions a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media(max-width:560px){#shopify-section-{{ section.id }} .rruk-recovery__actions a{width:100%;text-align:center}}
+</style>
+{% schema %}
+{"name":"RRUK product recovery","templates":["product"],"settings":[{"type":"text","id":"heading","label":"Heading","default":"LOOKING FOR SOMETHING DIFFERENT?"},{"type":"text","id":"copy","label":"Copy","default":"Can’t see the exact console, colour or edition you’re after? I can help you find a suitable alternative."},{"type":"url","id":"hunt_url","label":"Console Hunt URL","default":"/pages/contact"},{"type":"url","id":"checker_url","label":"Console Checker base URL","default":"https://taccountant2026.github.io/Retro-Gift-Finder/console-checker/"}],"presets":[{"name":"RRUK product recovery"}]}
+{% endschema %}
