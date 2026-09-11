@@ -51,5 +51,5 @@ const answer=document.getElementById('answer');
 document.querySelectorAll('.route').forEach(button=>button.addEventListener('click',()=>{const t=topics[button.dataset.topic];answer.innerHTML='<h3 class="pixel">'+t.title+'</h3><ol class="steps">'+t.steps.map(x=>'<li>'+x+'</li>').join('')+'</ol><div class="actions">'+t.actions.map((a,i)=>'<a class="btn '+(i?'secondary':'')+'" href="'+a[1]+'">'+a[0]+' ▶</a>').join('')+'</div>';answer.classList.add('show');answer.focus();}));
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
-</body>
+<script src="../analytics.js"></script></body>
 </html>

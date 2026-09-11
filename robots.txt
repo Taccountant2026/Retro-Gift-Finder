@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /parcel/
+Disallow: /scoreboard/
 
 Sitemap: https://taccountant2026.github.io/Retro-Gift-Finder/sitemap.xml

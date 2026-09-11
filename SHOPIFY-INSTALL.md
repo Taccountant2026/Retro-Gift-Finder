@@ -1,41 +1,43 @@
 # Install the RRUK Shopify conversion sections
 
-These files are ready for the live RetroReplay UK theme:
+## Ready files
 
-- `shopify-sections/rruk-income-router.liquid`
-- `shopify-sections/rruk-product-recovery.liquid`
+- `rruk-income-router.liquid` - homepage decision routes
+- `rruk-product-recovery.liquid` - available and sold-out product recovery
+- `rruk-product-helpful-routes.liquid` - Gift Finder, Console Checker and Console Hunt product-page routes
+- `rruk-optional-thanks.liquid` - optional post-support contribution, disabled by default
+
+All files are in `shopify-sections/`.
 
 ## Safety first
 
 Duplicate the current live theme before editing it. Do not change the logo, checkout, legal pages, warranty terms, product information, prices or redirects.
 
-## Homepage income router
+## Install a section
 
-1. In Shopify, go to **Online Store > Themes**.
+1. Go to **Online Store > Themes**.
 2. Open the three-dot menu for the duplicate theme and choose **Edit code**.
 3. Under **Sections**, choose **Add a new section**.
-4. Name it `rruk-income-router`.
-5. Replace the generated content with the complete contents of `rruk-income-router.liquid`, then save.
-6. Open **Customize** for the duplicate theme.
-7. On the homepage, add **RRUK income router** immediately below the primary hero.
-8. Confirm the Shop, Gift Finder, Console Checker, Console Hunt and Valuation destinations in the section settings.
+4. Use the filename without `.liquid`.
+5. Replace the generated content with the complete contents of the matching file and save.
 
-## Product and sold-out recovery
+Repeat for each required section.
 
-1. In the same duplicate theme, add a section named `rruk-product-recovery`.
-2. Paste the complete contents of `rruk-product-recovery.liquid`, then save.
-3. In **Customize**, open the default product template.
-4. Add **RRUK product recovery** below the product information.
-5. Check one available product and one sold-out product on desktop and mobile.
-6. Confirm Console Hunt and Console Checker destinations in the section settings.
+## Place the sections
+
+- Add **RRUK income router** immediately below the homepage hero.
+- Add **RRUK product recovery** beneath product information on the default product template.
+- Add **RRUK helpful routes** beneath product recovery.
+- Add **RRUK optional thanks** only to a post-support or aftercare page. It is hidden until both the enable switch and an approved payment URL are set.
 
 ## Release check
 
-- Every button opens the intended page.
-- Sold-out products show **Find another for me**.
-- Available products show **Ask RRUK to find something different**.
-- No modded or preloaded-console claim has been introduced.
-- No product, price, warranty or legal content has changed.
-- Mobile text is readable and buttons do not overflow.
-
-Publish the duplicate theme only after these checks pass.
+- Confirm all section URL settings.
+- Check one available and one sold-out product.
+- Test desktop and mobile layouts.
+- Confirm Gift Finder and Console Checker links open.
+- Confirm Console Hunt receives product context.
+- Keep **RRUK optional thanks** disabled until a genuine payment URL and final wording are approved.
+- Do not describe an optional contribution as required, a purchase, or a condition of support.
+- Confirm no product, price, warranty, return or legal content changed.
+- Publish the duplicate theme only after every check passes.

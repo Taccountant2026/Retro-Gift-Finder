@@ -1,0 +1,24 @@
+{% comment %}RRUK product-page helpful routes for shoppers who are not ready to add this item.{% endcomment %}
+<section class="rruk-helpful" aria-labelledby="rruk-helpful-title-{{ section.id }}">
+  <p class="rruk-helpful__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+  <h2 id="rruk-helpful-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+  <div class="rruk-helpful__grid">
+    <a href="{{ section.settings.gift_url }}?utm_source=rruk_product&amp;utm_medium=helpful_route&amp;utm_campaign=gift_finder{% if product %}&amp;utm_content={{ product.handle | url_encode }}{% endif %}"><strong>BUYING FOR SOMEONE?</strong><span>Use the six-clue Gift Finder.</span></a>
+    <a href="{{ section.settings.checker_url }}?utm_source=rruk_product&amp;utm_medium=helpful_route&amp;utm_campaign=console_checker{% if product %}&amp;console={{ product.title | url_encode }}{% endif %}"><strong>CHECK THIS MODEL</strong><span>Research the console before deciding.</span></a>
+    <a href="{{ section.settings.hunt_url }}?utm_source=rruk_product&amp;utm_medium=helpful_route&amp;utm_campaign=console_hunt{% if product %}&amp;console={{ product.title | url_encode }}{% endif %}"><strong>NEED A DIFFERENT ONE?</strong><span>Ask RRUK to help source it.</span></a>
+  </div>
+</section>
+<style>
+#shopify-section-{{ section.id }} .rruk-helpful{margin:28px 0;padding:22px;background:#020f32;color:#fff;border-block:3px solid #00a8ff}
+#shopify-section-{{ section.id }} .rruk-helpful__eyebrow{color:#16d5ff;font:800 13px "Courier New",monospace;letter-spacing:.1em;margin:0}
+#shopify-section-{{ section.id }} .rruk-helpful h2{color:#ffd326;font:900 clamp(20px,4vw,28px) "Courier New",monospace;text-transform:uppercase;margin:7px 0 16px}
+#shopify-section-{{ section.id }} .rruk-helpful__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+#shopify-section-{{ section.id }} .rruk-helpful__grid a{background:#061b49;color:#fff;border:2px solid #147fc7;padding:16px;text-decoration:none}
+#shopify-section-{{ section.id }} .rruk-helpful__grid a:hover,#shopify-section-{{ section.id }} .rruk-helpful__grid a:focus-visible{border-color:#ffd326;outline:3px solid rgba(255,211,38,.3)}
+#shopify-section-{{ section.id }} .rruk-helpful strong{display:block;color:#ffd326;font:900 14px "Courier New",monospace}
+#shopify-section-{{ section.id }} .rruk-helpful span{display:block;margin-top:7px}
+@media(max-width:700px){#shopify-section-{{ section.id }} .rruk-helpful__grid{grid-template-columns:1fr}}
+</style>
+{% schema %}
+{"name":"RRUK helpful routes","templates":["product"],"settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"NOT QUITE READY?"},{"type":"text","id":"heading","label":"Heading","default":"CHOOSE A USEFUL NEXT STEP"},{"type":"url","id":"gift_url","label":"Gift Finder base URL","default":"https://taccountant2026.github.io/Retro-Gift-Finder/"},{"type":"url","id":"checker_url","label":"Console Checker base URL","default":"https://taccountant2026.github.io/Retro-Gift-Finder/console-checker/"},{"type":"url","id":"hunt_url","label":"Console Hunt URL","default":"/pages/find-my-console#1789076813a6932e54"}],"presets":[{"name":"RRUK helpful routes"}]}
+{% endschema %}
