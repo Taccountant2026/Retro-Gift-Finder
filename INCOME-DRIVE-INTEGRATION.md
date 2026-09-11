@@ -27,3 +27,9 @@ The current RRUK Contact page is used for `Find one for me`. Replace this with t
 
 ## Shopify handoff
 After this branch is tested, Shopify should expose the Gift Finder prominently from the homepage and navigation. Product pages and sold-out states should also link to the permanent Console Hunt route.
+
+## Customer retention routes
+
+- `/aftercare/` provides setup, fault, delivery, warranty, valuation and next-console routing.
+- `/feedback/` collects a short customer experience summary, prepares an email to RRUK, routes service problems to Aftercare, and gives every customer an equal route to leave an honest Google review.
+- Neither route stores personal data in the GitHub Pages site.
