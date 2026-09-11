@@ -35,3 +35,5 @@ After this branch is tested, Shopify should expose the Gift Finder prominently f
 - Neither route stores personal data in the GitHub Pages site.
 
 - `/share/` provides tracked customer referral links and repeat-purchase routes to ready-to-ship stock, Gift Finder and Console Checker without promising rewards or collecting personal data.
+
+- `/parcel/` is an A5 print-ready order insert. Its QR code sends customers to Aftercare with parcel-source attribution; the card also prompts feedback and repeat engagement without changing warranty terms.
