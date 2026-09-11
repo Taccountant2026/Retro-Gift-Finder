@@ -57,7 +57,7 @@
     const el = document.createElement('aside');
     el.id = 'rruk-consent';
     el.setAttribute('aria-label', 'Analytics choice');
-    el.innerHTML = '<div><strong>Help improve these free RRUK tools?</strong><span> Allow anonymous usage analytics. Advertising tracking stays off.</span></div><div><button data-consent="granted">Allow analytics</button><button data-consent="denied">No thanks</button></div>';
+    el.innerHTML = '<div><strong>Help improve these free RRUK tools?</strong><span> Allow usage analytics. Advertising tracking stays off.</span></div><div><button data-consent="granted">Allow analytics</button><button data-consent="denied">No thanks</button></div>';
     Object.assign(el.style, {position:'fixed',left:'12px',right:'12px',bottom:'12px',zIndex:'9999',background:'#020a20',color:'#fff',border:'2px solid #16d5ff',padding:'14px',display:'flex',gap:'14px',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',boxShadow:'0 5px 24px #0009',fontFamily:'Arial,sans-serif',fontSize:'14px'});
     el.querySelectorAll('button').forEach((b, i) => Object.assign(b.style, {border:'0',padding:'10px 13px',cursor:'pointer',fontWeight:'700',marginLeft:'8px',background:i ? '#29446f' : '#ffd326',color:i ? '#fff' : '#051334'}));
     el.addEventListener('click', e => {
