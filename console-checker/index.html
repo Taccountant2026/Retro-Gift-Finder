@@ -18,4 +18,4 @@ function quick(){const q=Q.value.trim().toLowerCase();if(!q)return;for(let bi=0;
 fill(B,D.brands);families();B.onchange=families;F.onchange=models;document.getElementById('check').onclick=show;Q.addEventListener('keydown',e=>{if(e.key==='Enter')quick()});Q.addEventListener('input',()=>{if(Q.value.trim().length>=4)quick()});
 let fc=0,mc=0;D.brands.forEach(b=>{fc+=b.families.length;b.families.forEach(f=>mc+=f.models.length)});brandsN.textContent=D.brands.length;familiesN.textContent=fc;modelsN.textContent=mc;
 const incoming=new URLSearchParams(location.search).get('console')||(location.hash.startsWith('#model=')?decodeURIComponent(location.hash.slice(7)):'');if(incoming){Q.value=incoming;quick()}
-</script></body></html>
+</script><script src="../analytics.js"></script></body></html>
