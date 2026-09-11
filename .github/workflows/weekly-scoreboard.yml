@@ -1,0 +1,51 @@
+name: RRUK weekly income check
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-scoreboard-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open weekly scoreboard task
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const now = new Date();
+            const monday = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+            const day = (monday.getUTCDay() + 6) % 7;
+            monday.setUTCDate(monday.getUTCDate() - day);
+            const week = monday.toISOString().slice(0, 10);
+            const title = `RRUK weekly income check — ${week}`;
+            const { data: open } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            if (open.some(issue => issue.title === title)) {
+              core.info('This week’s scoreboard task already exists.');
+              return;
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body: [
+                'Complete the [RRUK weekly income scoreboard](https://taccountant2026.github.io/Retro-Gift-Finder/scoreboard/).',
+                '',
+                '- [ ] Enter anonymous visitor and tool-completion totals from Google Analytics',
+                '- [ ] Enter RRUK clicks and Console Hunt leads',
+                '- [ ] Enter attributed sales, revenue, gross profit and refunds',
+                '- [ ] Save the week and export the CSV',
+                '- [ ] Record the single highest-priority improvement',
+                '',
+                'Do not place customer names, emails, addresses or order details in this issue or the scoreboard.'
+              ].join('\n')
+            });
