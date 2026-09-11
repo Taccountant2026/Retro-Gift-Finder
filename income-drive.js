@@ -2,7 +2,7 @@
 (() => {
   const RRUK = 'https://retroreplay.uk';
   const HUNT = RRUK + '/pages/find-my-console#1789076813a6932e54';
-  const CHECKER = 'https://taccountant2026.github.io/Retro-Console-Checker/';
+  const CHECKER = 'https://taccountant2026.github.io/Retro-Gift-Finder/console-checker/';
   const source = 'retro_gift_finder';
   const campaign = 'income_drive';
   const tracked = (url, medium='referral') => {
