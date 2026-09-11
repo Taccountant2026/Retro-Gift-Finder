@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /parcel/
 
-# Add the final sitemap URL here once the custom domain is connected.
+Sitemap: https://taccountant2026.github.io/Retro-Gift-Finder/sitemap.xml
