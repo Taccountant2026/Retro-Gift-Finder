@@ -33,3 +33,5 @@ After this branch is tested, Shopify should expose the Gift Finder prominently f
 - `/aftercare/` provides setup, fault, delivery, warranty, valuation and next-console routing.
 - `/feedback/` collects a short customer experience summary, prepares an email to RRUK, routes service problems to Aftercare, and gives every customer an equal route to leave an honest Google review.
 - Neither route stores personal data in the GitHub Pages site.
+
+- `/share/` provides tracked customer referral links and repeat-purchase routes to ready-to-ship stock, Gift Finder and Console Checker without promising rewards or collecting personal data.
