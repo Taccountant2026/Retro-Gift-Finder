@@ -1,39 +1,45 @@
-# RRUK Income Drive v1
+# RRUK Income Engine
 
-## Purpose
-Convert Retro Gift Finder from a standalone recommendation tool into a measurable RetroReplay UK sales and lead funnel.
+## Customer acquisition
 
-## Conversion layer
-`income-drive.js` adds four result exits:
+- `/` - six-clue Retro Gift Finder
+- `/console-checker/` - UK/PAL-first console identification and buying checks
+- Both tools send tracked shoppers to current RRUK collections or Console Hunt.
+- `income-drive.js` supplies contextual shop, sourcing and checking actions.
 
-1. **Shop this console** — returns the visitor to the relevant RRUK Shopify collection.
-2. **Find one for me** — sends a sourcing lead to the existing RRUK contact route until the dedicated Console Hunt page is live.
-3. **Check this console** — passes the recommended console family to Retro Console Checker.
-4. **Start again** — preserves the existing finder reset journey.
+## Customer retention
 
-It also adds UTM attribution using `utm_source=retro_gift_finder` and `utm_campaign=income_drive` so Shopify/analytics traffic can be separated from ordinary visits.
+- `/aftercare/` - setup, fault, delivery, warranty, valuation and next-console routes
+- `/feedback/` - honest feedback, service recovery and equal access to public reviews
+- `/share/` - referral sharing and repeat-purchase routes
+- `/parcel/` - A5 print insert with a tracked Aftercare QR code
 
-## Required HTML hook before release
-Load the conversion layer after the existing finder script and before `</body>`:
+## Measurement
 
-```html
-<script src="income-drive.js"></script>
-```
+- `analytics.js` uses RRUK GA4 property `G-PF6Q3TSMVL`.
+- Analytics storage defaults to denied and loads only after explicit visitor consent.
+- Advertising storage, ad user data and ad personalisation remain denied.
+- It records consented page views, tool actions, form completions and outbound clicks.
+- Existing UTM parameters identify the originating tool and campaign.
 
-Keep the existing finder questions, recommendation logic and RRUK visual identity unchanged.
+## Weekly control
 
-## Temporary lead route
-The current RRUK Contact page is used for `Find one for me`. Replace this with the permanent Shopify Console Hunt URL as soon as that page is created.
+- `/scoreboard/` is a noindex weekly performance calculator.
+- It stores anonymous totals only in the current browser and exports CSV.
+- The Monday GitHub workflow opens one weekly checklist issue and avoids duplicates.
+- Never enter customer identities or order details.
 
-## Shopify handoff
-After this branch is tested, Shopify should expose the Gift Finder prominently from the homepage and navigation. Product pages and sold-out states should also link to the permanent Console Hunt route.
+## Shopify conversion layer
 
-## Customer retention routes
+- Homepage income router
+- Product and sold-out recovery
+- Product-page helpful routes
+- Disabled-by-default optional thank-you section
+- Installation and release steps are in `SHOPIFY-INSTALL.md`.
 
-- `/aftercare/` provides setup, fault, delivery, warranty, valuation and next-console routing.
-- `/feedback/` collects a short customer experience summary, prepares an email to RRUK, routes service problems to Aftercare, and gives every customer an equal route to leave an honest Google review.
-- Neither route stores personal data in the GitHub Pages site.
+## Guardrails
 
-- `/share/` provides tracked customer referral links and repeat-purchase routes to ready-to-ship stock, Gift Finder and Console Checker without promising rewards or collecting personal data.
-
-- `/parcel/` is an A5 print-ready order insert. Its QR code sends customers to Aftercare with parcel-source attribution; the card also prompts feedback and repeat engagement without changing warranty terms.
+- No fake inventory, reviews or availability claims
+- No modded or preloaded-console claims
+- No change to current prices, warranties, returns, legal pages or checkout
+- Optional contributions never affect an order, warranty, return or support
