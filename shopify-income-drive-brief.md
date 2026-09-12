@@ -8,7 +8,8 @@ Create a responsive section titled **WHAT BRINGS YOU TO RRUK?** with five clear 
 - **SHOP RETRO — I know what I want** → current retro-console shop/collections.
 - **GIFT FINDER — I'm buying for someone** → https://taccountant2026.github.io/Retro-Gift-Finder/#finder
 - **CONSOLE CHECKER — I'm researching a console** → https://taccountant2026.github.io/Retro-Gift-Finder/console-checker/
-- **CONSOLE HUNT — I can't find what I want** → dedicated Console Hunt page once created; temporarily use `/pages/contact`.
+- **CONSOLE HUNT — I can't find what I want** → `https://taccountant2026.github.io/Retro-Gift-Finder/console-hunt/`.
+- **SELL OR VALUE — I have something to sell** → `https://taccountant2026.github.io/Retro-Gift-Finder/sell-value/`.
 - **SELL / VALUE — I have something to sell** → dedicated valuation page once created.
 
 The section must match RRUK's existing visual identity, work cleanly on mobile and sit below the primary hero rather than replacing it.

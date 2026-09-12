@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sell or Value Retro Hardware | RetroReplay UK</title>
+  <meta name="description" content="Prepare a clear retro-console sale or valuation enquiry for RetroReplay UK.">
+  <style>
+    :root{--navy:#020f32;--panel:#061b49;--blue:#00a8ff;--cyan:#16d5ff;--yellow:#ffd326;--white:#fff;--muted:#c6d5ee}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#020b25,#03183f);color:var(--white);font-family:Arial,sans-serif;line-height:1.55}.wrap{width:min(920px,92%);margin:auto}.top{padding:32px 0;border-bottom:3px solid var(--blue)}.pixel{font-family:"Courier New",monospace;font-weight:900;text-transform:uppercase}.top h1{margin:4px 0;color:var(--yellow);font-size:clamp(34px,7vw,58px)}.eyebrow{color:var(--cyan);letter-spacing:.13em}.top p,.note{color:var(--muted)}nav{background:#051842;border-bottom:2px solid #087dcc}.nav{display:flex;overflow:auto}.nav a{padding:13px 16px;color:#fff;text-decoration:none;white-space:nowrap}.nav a[aria-current]{background:var(--yellow);color:#061334;font-weight:900}.return{display:inline-block;margin-top:15px;color:var(--yellow);font-weight:900}.card{margin:32px auto;padding:clamp(20px,5vw,38px);background:var(--panel);border:2px solid var(--cyan)}.card h2{margin-top:0;color:var(--yellow)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{margin-bottom:17px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:6px;font-weight:800}input,select,textarea{width:100%;padding:13px;border:2px solid #6fc7ff;background:#fff;color:#061334;font:inherit}input:focus,select:focus,textarea:focus{outline:3px solid rgba(255,211,38,.4);border-color:var(--yellow)}button{width:auto;padding:14px 18px;border:0;border-bottom:4px solid #dc8f00;background:var(--yellow);color:#061334;font:900 14px "Courier New",monospace;cursor:pointer}.note{margin-top:20px;padding:14px;border-left:4px solid var(--cyan);background:#031338}.success{display:none;margin-top:20px;padding:18px;background:#d8ffe8;color:#06351d;border-left:5px solid #18a05a}.success.show{display:block}.footer{padding:30px 0;border-top:2px solid #087dcc;color:var(--muted)}@media(max-width:650px){.grid{grid-template-columns:1fr}.field.full{grid-column:auto}button{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap"><div class="eyebrow pixel">CLEAR, NO-OBLIGATION ENQUIRY</div><h1 class="pixel">Sell or Value</h1><p>Describe your retro hardware accurately and prepare an enquiry. Any figure discussed is provisional until the item, condition and included parts are verified.</p><a class="return" href="https://retroreplay.uk/?utm_source=sell_value&amp;utm_medium=navigation&amp;utm_campaign=income_drive">← Return to RetroReplay UK</a></div></header>
+  <nav aria-label="RRUK tools"><div class="wrap nav"><a href="../">Gift Finder</a><a href="../console-checker/">Console Checker</a><a href="../console-hunt/">Console Hunt</a><a aria-current="page" href="./">Sell or Value</a><a href="../aftercare/">Aftercare</a><a href="../feedback/">Feedback</a></div></nav>
+  <main class="wrap"><section class="card"><h2 class="pixel">Tell me what you have</h2><form id="valueForm"><div class="grid">
+    <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+    <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+    <div class="field"><label for="item">Console or item</label><input id="item" name="item" placeholder="Brand, model and colour" required></div>
+    <div class="field"><label for="working">Working condition</label><select id="working" name="working"><option>Fully working</option><option>Partly working or intermittent</option><option>Not working</option><option>Untested</option></select></div>
+    <div class="field"><label for="included">Included items</label><input id="included" name="included" placeholder="Controllers, leads, box, manuals"></div>
+    <div class="field"><label for="postcode">Collection postcode</label><input id="postcode" name="postcode" autocomplete="postal-code" placeholder="Optional"></div>
+    <div class="field full"><label for="condition">Cosmetic condition and faults</label><textarea id="condition" name="condition" rows="5" placeholder="Mention damage, missing covers, yellowing, repairs or faults" required></textarea></div>
+  </div><button type="submit">PREPARE MY ENQUIRY</button></form><div class="success" id="success" tabindex="-1"><strong>Your email is ready.</strong> Add clear photographs in your email app, review the information and press Send.</div><div class="note"><strong>For an accurate review:</strong> include photographs of the whole item, model label, ports, accessories and any damage. Do not post or deliver anything until arrangements are confirmed in writing.</div></section></main>
+  <footer class="footer"><div class="wrap">Sell or Value by RetroReplay UK · <a href="https://retroreplay.uk" style="color:#16d5ff">Return to the shop</a></div></footer>
+  <script>
+    document.getElementById('valueForm').addEventListener('submit',function(e){e.preventDefault();const d=new FormData(this),subject='Sell or value enquiry — '+d.get('item'),body=['Name: '+d.get('name'),'Email: '+d.get('email'),'Item: '+d.get('item'),'Working condition: '+d.get('working'),'Included items: '+(d.get('included')||'Not specified'),'Collection postcode: '+(d.get('postcode')||'Not specified'),'','Cosmetic condition and faults:',d.get('condition')].join('\n');document.getElementById('success').classList.add('show');document.getElementById('success').focus();location.href='mailto:info@retroreplay.uk?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)});
+  </script>
+  <script src="../analytics.js"></script>
+</body>
+</html>

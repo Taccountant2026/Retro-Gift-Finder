@@ -6,6 +6,8 @@ A connected set of RetroReplay UK customer tools for discovery, console research
 
 - [Retro Gift Finder](https://taccountant2026.github.io/Retro-Gift-Finder/)
 - [Retro Console Checker](https://taccountant2026.github.io/Retro-Gift-Finder/console-checker/)
+- [Console Hunt](https://taccountant2026.github.io/Retro-Gift-Finder/console-hunt/)
+- [Sell or Value](https://taccountant2026.github.io/Retro-Gift-Finder/sell-value/)
 - [Aftercare Hub](https://taccountant2026.github.io/Retro-Gift-Finder/aftercare/)
 - [Customer Feedback](https://taccountant2026.github.io/Retro-Gift-Finder/feedback/)
 - [Share and Discover](https://taccountant2026.github.io/Retro-Gift-Finder/share/)
